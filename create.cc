@@ -65,13 +65,14 @@ int Create::run(char* block1path, char* block2path)
 				break;
 			}
 		}
-		if (i % 64 == 0) {
+		if (i % 256 == 0) {
 			fprintf(stderr, "%llu/%llu\n", i, block_count);
 		}
 	}
 
 	fclose(block1);
 	fclose(block2);
+	fclose(stdout);
 
 	if (success) {
 		return 0;
